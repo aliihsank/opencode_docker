@@ -6,10 +6,14 @@ services:
     stdin_open: true
     tty: true
     working_dir: /workspace
+    environment:
+      - OPENCODE_PASSWORD=your_opencode_password_here
+      - GOOGLE_API_KEY=your_google_api_key_here
     ports:
       - "4096:4096"
     volumes:
-      - .:/workspace
+      - "C:\\Projects:/workspace"
+      - ./skills:/root/.config/opencode/skills
       - opencode_data:/root/.local/share/opencode
 
 volumes:
